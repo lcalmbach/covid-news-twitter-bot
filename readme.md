@@ -6,7 +6,7 @@ After cloning the repo, the file named const.py must be created and filled with 
 const.py:
 ```
 CONSUMER_KEY = <CONSUMER_KEY>
-CONSUMER_SECRET = <>
+CONSUMER_SECRET = <CONSUMER_SECRET>
 ACCESS_TOKEN= <CONSUMER_SECRET>
 ACCESS_TOKEN_SECRET= <ACCESS_TOKEN_SECRET>
 BEARER_TOKEN = <BEARER_TOKEN>
