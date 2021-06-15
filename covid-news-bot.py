@@ -3,12 +3,12 @@ import time
 import tweepy
 import requests
 import pandas as pd
-
+import const as cn
 
 
 INTERVAL = 60 * 5
-auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
-auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
+auth = tweepy.OAuthHandler(cn.CONSUMER_KEY, cn.CONSUMER_SECRET)
+auth.set_access_token(cn.ACCESS_TOKEN, cn.ACCESS_TOKEN_SECRET)
 
 URL = 'https://data.bs.ch/api/records/1.0/search/?dataset=100073&q=&rows=1&sort=timestamp&facet=timestamp'
 
@@ -57,8 +57,8 @@ def main():
                 text  = get_text(data)                
                 last_date_published = record_datum
                 try:
-                    print(text)
-                    #api.update_status(text)
+                    #print(text)
+                    api.update_status(text)
                     print(f"{datetime.now()} Tweet has been sent")
                 except Exception as ex:
                     print(f"{datetime.now()} {ex}")
