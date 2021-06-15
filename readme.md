@@ -3,9 +3,11 @@ This application scans the opendata.bs platform every 5 minutes for new records 
 
 After cloning the repo, the file named const.py must be created and filled with your Twitter Authentification info, provided once your developer account is set up. Make sure that this file is kept secret.
 
-# Authenticate to Twitter
+const.py:
+```
 CONSUMER_KEY = <CONSUMER_KEY>
 CONSUMER_SECRET = <>
 ACCESS_TOKEN= <CONSUMER_SECRET>
 ACCESS_TOKEN_SECRET= <ACCESS_TOKEN_SECRET>
 BEARER_TOKEN = <BEARER_TOKEN>
+```
