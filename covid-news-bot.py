@@ -2,9 +2,13 @@ from datetime import datetime, timedelta
 import time
 import tweepy
 import requests
-import dateutil
 import const as cn
 
+__version__ = '0.0.2' 
+__author__ = 'Lukas Calmbach'
+__author_email__ = 'lcalmbach@gmail.com'
+app_name = 'covid-new-twitter-bot'
+version_date = '2021-06-16'
 
 INTERVAL = 60 * 5
 auth = tweepy.OAuthHandler(cn.CONSUMER_KEY, cn.CONSUMER_SECRET)
@@ -41,7 +45,8 @@ Hospitalisierte: {data['current_hosp']}, In Intensivstation: {data['current_icu'
 def main():
     api = tweepy.API(auth)
     data, last_date_published = get_data()
-    
+    start_message = f"Started {app_name} version {__version__} ({version_date})"
+    print(start_message)
     while True:
         #get must recent data record from opendata.bs
         data, record_datum = get_data()
@@ -52,8 +57,8 @@ def main():
                 text  = get_text(data)                
                 last_date_published = record_datum
                 try:
-                    print(text)
-                    #api.update_status(text)
+                    #print(text)
+                    api.update_status(text)
                     print(f"{datetime.now()} Tweet has been sent")
                 except Exception as ex:
                     print(f"{datetime.now()} {ex}")
