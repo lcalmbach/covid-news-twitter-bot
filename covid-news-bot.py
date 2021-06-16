@@ -2,7 +2,7 @@ from datetime import datetime, timedelta
 import time
 import tweepy
 import requests
-import pandas as pd
+import dateutil
 import const as cn
 
 
@@ -16,30 +16,25 @@ def get_data():
     """
     Retrieves the json data from opendata.bs and converts it to a panda dataframe
     """
-    
-    record_time_stamp = datetime.now() - timedelta(days=30) # default timestamp 30 days ago
+    dic_values = {}
+    time_stamp = datetime.now() - timedelta(days=30) # default timestamp 30 days ago
     try:
         data = requests.get(URL).json()
-        data = data['records']
-        #df = pd.DataFrame(data)['record_timestamp']
-        record_time_stamp = data[0]['record_timestamp'][:10]
-        record_time_stamp = datetime.strptime(record_time_stamp, '%Y-%m-%d')
-        df = pd.DataFrame(data)['fields']
-        df = pd.DataFrame(x for x in df)
-        record_time_stamp = record_time_stamp
+        dic_values = data['records'][0]['fields']
+        time_stamp = dic_values['timestamp']
+        time_stamp = datetime.fromisoformat(time_stamp)
     except:
         print(f"{datetime.now()} no data returned")
-        df = pd.DataFrame()
 
-    return df, record_time_stamp
+    return dic_values, time_stamp
 
 def get_text(data):
     """
-    verifies whether passed date is older than date in ogd-record
+    builds the string to be tweeted
     """
-
-    text = f"""Covid-news BS: Neue Zahlen auf @OpenDataBS: Fälle neu: {int(data['ndiff_conf'][0])}, kumuliert: {int(data['ncumul_conf'][0])}, Aktive Fälle: {data['current_isolated'][0]}, 
-Hospitalisierte: {data['current_hosp'][0]}, In Intensivstation: {data['current_icu'][0]}. Alle Detailzahlen unter https://data.bs.ch/explore/dataset/100073/table/?sort=timestamp
+    url = 'https://data.bs.ch/explore/dataset/100073/table/?sort=timestamp'
+    text = f"""Covid-news BS: Neue Zahlen auf @OpenDataBS: Fälle neu: {int(data['ndiff_conf'])}, kumuliert: {int(data['ncumul_conf'])}, Aktive Fälle: {data['current_isolated']}, 
+Hospitalisierte: {data['current_hosp']}, In Intensivstation: {data['current_icu']}. Alle Detailzahlen unter {url}
         """
     return text
 
@@ -57,8 +52,8 @@ def main():
                 text  = get_text(data)                
                 last_date_published = record_datum
                 try:
-                    #print(text)
-                    api.update_status(text)
+                    print(text)
+                    #api.update_status(text)
                     print(f"{datetime.now()} Tweet has been sent")
                 except Exception as ex:
                     print(f"{datetime.now()} {ex}")
