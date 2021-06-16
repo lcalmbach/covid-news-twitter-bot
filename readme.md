@@ -11,3 +11,16 @@ ACCESS_TOKEN= <CONSUMER_SECRET>
 ACCESS_TOKEN_SECRET= <ACCESS_TOKEN_SECRET>
 BEARER_TOKEN = <BEARER_TOKEN>
 ```
+
+When playing around, make sure that you comment out the command to send the tweet ans switch on the print command, so you do not generate any unintended tweets. Once the program works as expected, don't forget to switch the comment off again.
+
+During testing:
+```
+print(text)
+#api.update_status(text)
+```
+During production:
+```
+#print(text)
+api.update_status(text)
+```
