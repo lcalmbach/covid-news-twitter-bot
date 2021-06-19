@@ -40,8 +40,7 @@ def get_text(data):
     time_stamp = f"{data['date']} {data['time']}"
     hospitalized= f", Hospitalisierte: '{data['current_hosp']}" if  'current_hosp' in data else ""
     icu = f", In Intensivstation: '{data['current_icu']}" if  'current_icu' in data else ""
-    text = f"""Covid-news BS: Zahlen auf @OpenDataBS Stand: {time_stamp}: Fälle: {int(data['ncumul_conf'])}(+{int(data['ndiff_conf'])}), Aktive Fälle: {data['current_isolated']}, 
-Verstorbene: {data['ncumul_deceased']}(+{data['ndiff_deceased']}){hospitalized}{icu}. Alle Detailzahlen unter {url}
+    text = f"""Covid-news BS: Zahlen auf @OpenDataBS Stand: {time_stamp}: Fälle: {int(data['ncumul_conf'])}(+{int(data['ndiff_conf'])}), Aktive Fälle: {data['current_isolated']}, Verstorbene: {data['ncumul_deceased']}(+{data['ndiff_deceased']}){hospitalized}{icu}. Alle Detailzahlen unter {url}
         """
     return text
 
@@ -56,6 +55,7 @@ def main():
         #verify if record timestamp is more recent than last published records timestamp
         if len(data) > 0:
             has_changes = (record_datum > last_date_published)
+            has_changes = True
             if has_changes:
                 text  = get_text(data)                
                 last_date_published = record_datum
