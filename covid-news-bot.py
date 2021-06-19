@@ -4,11 +4,11 @@ import tweepy
 import requests
 import const as cn
 
-__version__ = '0.0.2' 
+__version__ = '0.0.3' 
 __author__ = 'Lukas Calmbach'
 __author_email__ = 'lcalmbach@gmail.com'
 app_name = 'covid-new-twitter-bot'
-version_date = '2021-06-16'
+version_date = '2021-06-19'
 
 INTERVAL = 60 * 5
 auth = tweepy.OAuthHandler(cn.CONSUMER_KEY, cn.CONSUMER_SECRET)
@@ -37,8 +37,11 @@ def get_text(data):
     builds the string to be tweeted
     """
     url = 'https://data.bs.ch/explore/dataset/100073/table/?sort=timestamp'
-    text = f"""Covid-news BS: Neue Zahlen auf @OpenDataBS: Fälle neu: {int(data['ndiff_conf'])}, kumuliert: {int(data['ncumul_conf'])}, Aktive Fälle: {data['current_isolated']}, 
-Hospitalisierte: {data['current_hosp']}, In Intensivstation: {data['current_icu']}. Alle Detailzahlen unter {url}
+    time_stamp = f"{data['date']} {data['time']}"
+    hospitalized= f", Hospitalisierte: '{data['current_hosp']}" if  'current_hosp' in data else ""
+    icu = f", In Intensivstation: '{data['current_icu']}" if  'current_icu' in data else ""
+    text = f"""Covid-news BS: Zahlen auf @OpenDataBS Stand: {time_stamp}: Fälle: {int(data['ncumul_conf'])}(+{int(data['ndiff_conf'])}), Aktive Fälle: {data['current_isolated']}, 
+Verstorbene: {data['ncumul_deceased']}(+{data['ndiff_deceased']}){hospitalized}{icu}. Alle Detailzahlen unter {url}
         """
     return text
 
