@@ -1,0 +1,144 @@
+
+Status   Name               DisplayName
+------   ----               -----------
+Running  AdobeARMservice    Adobe Acrobat Update Service
+Running  AdobeUpdateService AdobeUpdateService
+Running  AGMService         Adobe Genuine Monitor Service
+Running  AGSService         Adobe Genuine Software Integrity Serv…
+Running  AppHostSvc         Anwendungshost-Hilfsdienst
+Running  Appinfo            Anwendungsinformationen
+Running  AppXSvc            AppX-Bereitstellungsdienst (AppXSVC)
+Running  AudioEndpointBuil… Windows-Audio-Endpunkterstellung
+Running  Audiosrv           Windows-Audio
+Running  BFE                Basisfiltermodul
+Running  BITS               Intelligenter Hintergrundübertragungs…
+Running  BrokerInfrastruct… Infrastrukturdienst für Hintergrundau…
+Running  BTAGService        Bluetooth-Audiogateway-Dienst
+Running  BthAvctpSvc        AVCTP-Dienst
+Running  bthserv            Bluetooth-Unterstützungsdienst
+Running  camsvc             Manager-Dienst für den Funktionszugri…
+Running  cbdhsvc_22cca832   Clipboard User Service_22cca832
+Running  CDPSvc             Plattformdienst für verbundene Geräte
+Running  CDPUserSvc_22cca8… Connected Devices Platform User Servi…
+Running  ClickToRunSvc      Microsoft Office-Klick-und-Los-Dienst
+Running  ClipSVC            Clientlizenzdienst (ClipSVC)
+Running  com.docker.service Docker Desktop Service
+Running  CoreMessagingRegi… CoreMessaging
+Running  cphs               Intel(R) Content Protection HECI Serv…
+Running  cplspcon           Intel(R) Content Protection HDCP Serv…
+Running  CryptSvc           Kryptografiedienste
+Running  DcomLaunch         DCOM-Server-Prozessstart
+Running  DeviceAssociation… Gerätezuordnungsdienst
+Running  Dhcp               DHCP-Client
+Running  DiagTrack          Benutzererfahrungen und Telemetrie im…
+Running  DispBrokerDesktop… Anzeigerichtliniendienst
+Running  Dnscache           DNS-Client
+Running  DoSvc              Übermittlungsoptimierung
+Running  DPS                Diagnoserichtliniendienst
+Running  DsSvc              Datenfreigabedienst
+Running  DusmSvc            Datennutzung
+Running  EventLog           Windows-Ereignisprotokoll
+Running  EventSystem        COM+-Ereignissystem
+Running  FontCache          Windows-Dienst für Schriftartencache
+Running  hidserv            Eingabegerätedienst
+Running  hns                Hostnetzwerkdienst
+Running  HPPrintScanDoctor… HP Print Scan Doctor Service
+Running  HvHost             HV-Hostdienst
+Running  igccservice        Intel(R) Graphics Command Center Serv…
+Running  igfxCUIService2.0… Intel(R) HD Graphics Control Panel Se…
+Running  ImControllerServi… System Interface Foundation Service
+Running  InstallService     Microsoft Store-Installationsdienst
+Running  iphlpsvc           IP-Hilfsdienst
+Running  jhi_service        Intel(R) Dynamic Application Loader H…
+Running  KeyIso             CNG-Schlüsselisolation
+Running  LanmanServer       Server
+Running  LanmanWorkstation  Arbeitsstationsdienst
+Running  LenovoVantageServ… LenovoVantageService
+Running  lfsvc              Geolocation-Dienst
+Running  LicenseManager     Windows-Lizenz-Manager-Dienst
+Running  lmhosts            TCP/IP-NetBIOS-Hilfsdienst
+Running  LMS                Intel(R) Management and Security Appl…
+Running  LogiFacecamService Logi Facecam Service
+Running  LSM                Lokaler Sitzungs-Manager
+Running  LxssManager        LXSSMANAGER
+Running  mpssvc             Windows Defender Firewall
+Running  msiserver          Windows Installer
+Running  MSSQL$LIESTAL      SQL Server (LIESTAL)
+Running  MSSQLLaunchpad$LI… SQL Server Launchpad (LIESTAL)
+Running  MySQL80            MySQL80
+Running  NcbService         Netzwerkverbindungsbroker
+Running  netprofm           Netzwerklistendienst
+Running  NgcCtnrSvc         Microsoft Passport-Container
+Running  NgcSvc             Microsoft Passport
+Running  NlaSvc             NLA (Network Location Awareness)
+Running  nsi                Netzwerkspeicher-Schnittstellendienst
+Running  nvagent            Netzwerkvirtualisierungsdienst
+Running  OneSyncSvc_22cca8… Sync Host_22cca832
+Running  OpenVPNServiceInt… OpenVPN Interactive Service
+Running  PcaSvc             Programmkompatibilitäts-Assistent-Die…
+Running  PhoneSvc           Telefondienst
+Running  PimIndexMaintenan… Contact Data_22cca832
+Running  PlugPlay           Plug & Play
+Running  PolicyAgent        IPsec-Richtlinien-Agent
+Running  postgresql-x64-13  postgresql-x64-13 - PostgreSQL Server…
+Running  Power              Stromversorgung
+Running  ProfSvc            Benutzerprofildienst
+Running  QWAVE              Verbessertes Windows-Audio/Video-Stre…
+Running  RasMan             RAS-Verbindungsverwaltung
+Running  RmSvc              Funkverwaltungsdienst
+Running  RpcEptMapper       RPC-Endpunktzuordnung
+Running  RpcSs              Remoteprozeduraufruf (RPC)
+Running  RstMwService       Intel(R) Storage Middleware Service
+Running  RtkAudioUniversal… Realtek Audio Universal Service
+Running  SamSs              Sicherheitskonto-Manager
+Running  Schedule           Aufgabenplanung
+Running  seclogon           Sekundäre Anmeldung
+Running  SecurityHealthSer… Windows-Sicherheitsdienst
+Running  SEMgrSvc           Zahlungs- und NFC/SE-Manager
+Running  SENS               Benachrichtigungsdienst für Systemere…
+Running  SgrmBroker         Broker für Laufzeitüberwachung der Sy…
+Running  SharedAccess       Gemeinsame Nutzung der Internetverbin…
+Running  ShellHWDetection   Shellhardwareerkennung
+Running  Spooler            Druckwarteschlange
+Running  sppsvc             Software Protection
+Running  SQLTELEMETRY$LIES… SQL Server CEIP service (LIESTAL)
+Running  SQLWriter          SQL Server VSS Writer
+Running  SSDPSRV            SSDP-Suche
+Running  SstpSvc            SSTP-Dienst
+Running  StateRepository    StateRepository-Dienst
+Running  stisvc             Windows-Bilderfassung (WIA)
+Running  StorSvc            Speicherdienst
+Running  SysMain            SysMain
+Running  SystemEventsBroker Systemereignissebroker
+Running  TabletInputService Dienst für Bildschirmtastatur und Sch…
+Running  Themes             Designs
+Running  TimeBrokerSvc      Zeitbroker
+Running  TokenBroker        Web Account Manager
+Running  TrkWks             Überwachung verteilter Verknüpfungen …
+Running  TrustedInstaller   Windows Modules Installer
+Running  UnistoreSvc_22cca… User Data Storage_22cca832
+Running  UserDataSvc_22cca… User Data Access_22cca832
+Running  UserManager        Benutzer-Manager
+Running  UsoSvc             Update-Orchestrator-Dienst
+Running  VaultSvc           Anmeldeinformationsverwaltung
+Running  vmcompute          Hyper-V-Hostserverdienst
+Running  vmms               Hyper-V-Verwaltung für virtuelle Comp…
+Running  vncserver          VNC Server
+Running  W3SVC              WWW-Publishingdienst
+Running  WaaSMedicSvc       Windows Update Medic Service
+Running  WAS                Windows-Prozessaktivierungsdienst
+Running  WbioSrvc           Windows-Biometriedienst
+Running  Wcmsvc             Windows-Verbindungs-Manager
+Running  WdiServiceHost     Diagnosediensthost
+Running  WdiSystemHost      Diagnosesystemhost
+Running  WdNisSvc           Microsoft Defender Antivirus-Netzwerk…
+Running  WebClient          Webclient
+Running  WinDefend          Microsoft Defender Antivirus-Dienst
+Running  WinHttpAutoProxyS… WinHTTP-Web Proxy Auto-Discovery-Dien…
+Running  Winmgmt            Windows-Verwaltungsinstrumentation
+Running  WpnService         Windows-Pushbenachrichtigungssystemdi…
+Running  WpnUserService_22… Windows Push Notifications User Servi…
+Running  wscsvc             Sicherheitscenter
+Running  WSearch            Windows Search
+Running  XblAuthManager     Xbox Live Authentifizierungs-Manager
+

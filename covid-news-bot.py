@@ -40,14 +40,20 @@ def get_text(data):
     time_stamp = f"{data['date']} {data['time']}"
     hospitalized= f", Hospitalisierte: '{data['current_hosp']}" if  'current_hosp' in data else ""
     icu = f", In Intensivstation: '{data['current_icu']}" if  'current_icu' in data else ""
-    text = f"""Covid-news BS: Zahlen auf @OpenDataBS Stand: {time_stamp}: Fälle: {int(data['ncumul_conf'])}(+{int(data['ndiff_conf'])}), Aktive Fälle: {data['current_isolated']}, Verstorbene: {data['ncumul_deceased']}(+{data['ndiff_deceased']}){hospitalized}{icu}. Alle Detailzahlen unter {url}
-        """
+    text = f"Covid-news BS: Zahlen auf @OpenDataBS Stand: {time_stamp}: Fälle: {int(data['ncumul_conf'])}(+{int(data['ndiff_conf'])}), Aktive Fälle: {data['current_isolated']}, Verstorbene: {data['ncumul_deceased']}(+{data['ndiff_deceased']}){hospitalized}{icu}. Alle Detailzahlen unter {url}"
     return text
+
+def sleep_until_next_day(hour, minute):
+    now = datetime.now()
+    tomorrow = now + timedelta(days=1)
+    tomorrow = datetime(tomorrow.year,tomorrow.month,tomorrow.day,hour,minute)
+    seconds = (tomorrow-now).total_seconds()
+    time.sleep(seconds)
 
 def main():
     api = tweepy.API(auth)
     data, last_date_published = get_data()
-    start_message = f"Started {app_name} version {__version__} ({version_date})"
+    start_message = f"Started {app_name} version {__version__} ({version_date}). Most recent iso-timestamp is {last_date_published}"
     print(start_message)
     while True:
         #get must recent data record from opendata.bs
@@ -60,9 +66,10 @@ def main():
                 text  = get_text(data)                
                 last_date_published = record_datum
                 try:
-                    #print(text)
-                    api.update_status(text)
+                    print(text)
+                    # api.update_status(text)
                     print(f"{datetime.now()} Tweet has been sent")
+                    sleep_until_next_day(10,0) 
                 except Exception as ex:
                     print(f"{datetime.now()} {ex}")
             else:
