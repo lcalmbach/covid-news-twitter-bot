@@ -25,8 +25,7 @@ def get_data():
     try:
         data = requests.get(URL).json()
         dic_values = data['records'][0]['fields']
-        time_stamp = dic_values['timestamp']
-        time_stamp = datetime.fromisoformat(time_stamp)
+        time_stamp = datetime.fromisoformat(dic_values['timestamp'])
     except:
         print(f"{datetime.now()} no data returned")
 
@@ -69,7 +68,7 @@ def main():
                     print(text)
                     # api.update_status(text)
                     print(f"{datetime.now()} Tweet has been sent")
-                    sleep_until_next_day(10,0) 
+                    # sleep_until_next_day(10,0) 
                 except Exception as ex:
                     print(f"{datetime.now()} {ex}")
             else:
